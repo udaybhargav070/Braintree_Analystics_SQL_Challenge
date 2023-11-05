@@ -7,7 +7,7 @@ total*/
 SELECT 
     d.year, 
     COUNT(DISTINCT c.country_name) AS country_count, 
-    ROUND(SUM(d.gdp_per_capita), 2) AS total
+    CONCAT('$',ROUND(SUM(d.gdp_per_capita), 2)) AS total
 FROM 
     continent_map a
     JOIN continents b ON a.continent_code = b.continent_code
@@ -34,11 +34,11 @@ GROUP BY
 /*Result Set*/
 
 year    country_count   		total
-2004	14	 			435360.53
-2005	14	 			453525.73
-2006	13	 			491425.81
-2007	13	 			580931.61
-2008	10	 			574016.21
-2009	8	 			399526.16
-2010	4	 			179750.83
-2011	4	 			199152.68
+2004	14	 			$435360.53
+2005	14	 			$453525.73
+2006	13	 			$491425.81
+2007	13	 			$580931.61
+2008	10	 			$574016.21
+2009	8	 			$399526.16
+2010	4	 			$179750.83
+2011	4	 			$199152.68
